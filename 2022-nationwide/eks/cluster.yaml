@@ -1,0 +1,51 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: skills-cluster
+  region: ap-northeast-2
+  version: '1.22.0'
+
+vpc:
+  subnets:
+    public:
+      ap-northeast-2a: { id: $PUBLIC_SUBNET_A_ID }
+      ap-northeast-2b: { id: $PUBLIC_SUBNET_B_ID }
+      ap-northeast-2c: { id: $PUBLIC_SUBNET_C_ID }      
+    private:
+      ap-northeast-2a: { id: $PRIVATE_SUBNET_A_ID }
+      ap-northeast-2b: { id: $PRIVATE_SUBNET_B_ID }
+      ap-northeast-2c: { id: $PRIVATE_SUBNET_C_ID }
+
+nodeGroups: 
+  - name: skills-app
+    instanceType: c5.large
+    labels: { skills: dedicated }
+    subnets:
+      ap-northeast-2a: { id: $PRIVATE_SUBNET_A_ID }
+      ap-northeast-2b: { id: $PRIVATE_SUBNET_B_ID }
+      ap-northeast-2c: { id: $PRIVATE_SUBNET_C_ID }
+    iam:
+      withAddonPolicies:
+        imageBuilder: true
+        albIngress: true
+        cloudWatch: true
+        autoScaler: true
+
+  - name: skills-addon
+    instanceType: c5.large
+    labels: { skills: addon }
+    subnets:
+      ap-northeast-2a: { id: $PRIVATE_SUBNET_A_ID }
+      ap-northeast-2b: { id: $PRIVATE_SUBNET_B_ID }
+      ap-northeast-2c: { id: $PRIVATE_SUBNET_C_ID }
+    iam:
+      withAddonPolicies:
+        imageBuilder: true
+        albIngress: true
+        cloudWatch: true
+        autoScaler: true
+
+cloudWatch:
+  clusterLogging:
+    enableTypes: ["*"]
