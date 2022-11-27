@@ -2,7 +2,7 @@
 
 ### 레포 이용시
 
-code 1  $git clone https://github.com/euichan2322/worldskills.git
+  $git clone https://github.com/euichan2322/worldskills.git
 
 code 2  $cd worldskills/2022-nationwide
 
