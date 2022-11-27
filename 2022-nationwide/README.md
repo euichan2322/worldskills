@@ -1,11 +1,16 @@
 # 2022 마이스터넷 주관 전국 기능경기대회 - 클라우드 컴퓨팅 종목 1과제 리소스들을 terraform으로 정리해놓은 디렉터리 입니다.
 
 ### 레포 이용시
-$git clone https://github.com/euichan2322/worldskills.git
-$cd worldskills/2022-nationwide
-$terraform init
-$terraform apply
-  Enter a value: <yes 입력
+
+code 1  $git clone https://github.com/euichan2322/worldskills.git
+
+code 2  $cd worldskills/2022-nationwide
+
+code 3  $terraform init
+
+code 4  $terraform apply
+
+code 5  Enter a value: <yes 입력
 
 채점시 bastion 서버의 instance Type를 't3.micro' 에서 'c5.large'로 변경합니다. (비용 절감을 목적으로 t3.micro 타입으로 설정해놨습니다.)
 
