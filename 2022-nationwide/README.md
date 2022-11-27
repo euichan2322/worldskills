@@ -5,13 +5,13 @@
 ```
 $git clone https://github.com/euichan2322/worldskills.git
 
-code 2  $cd worldskills/2022-nationwide
+$cd worldskills/2022-nationwide
 
-code 3  $terraform init
+$terraform init
 
-code 4  $terraform apply
+$terraform apply
 
-code 5  Enter a value: <yes 입력
+Enter a value: <yes 입력
 ```
 
 채점시 bastion 서버의 instance Type를 't3.micro' 에서 'c5.large'로 변경합니다. (비용 절감을 목적으로 t3.micro 타입으로 설정해놨습니다.)
