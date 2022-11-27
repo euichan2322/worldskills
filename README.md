@@ -2,6 +2,8 @@
 
 채점시 bastion 서버의 instance Type를 't3.micro' 에서 'c5.large'로 변경합니다. (비용 절감을 목적으로 t3.micro 타입으로 설정해놨습니다.)
 
+키페어는 terraform apply로 배포한 경로에 "skills-keypair.pem"으로 저장됩니다.
+
 
 추가할 기능 
 1. access키 로컬 파일에서 불러오게 구성.
